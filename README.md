@@ -23,4 +23,4 @@ Spritz
 2. Цуканов Ю.
 
 ## UML-diagram ##
-![UML](https://drive.google.com/file/d/0Bz06z4GeZx_2b0Q4RllxeU14bzQ/edit?usp=sharing)
+![UML](http://vk.com/photo146391617_326853124)
