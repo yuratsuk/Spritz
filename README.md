@@ -23,4 +23,4 @@ Spritz
 2. ������� �.
 
 ## UML-diagram ##
-![UML](https://drive.google.com/file/d/0Bz06z4GeZx_2b0Q4RllxeU14bzQ)
+![UML](https://drive.google.com/file/d/0Bz06z4GeZx_2b0Q4RllxeU14bzQ/edit?usp=sharing)
