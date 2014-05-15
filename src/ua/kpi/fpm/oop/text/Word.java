@@ -1,7 +1,7 @@
-package text;
+package ua.kpi.fpm.oop.text;
 
 /**
- * @author Lana
+ * @author Yura
  * This class contains word and atributes
  * id - number in paragraph
  * centralSymbol - symbol with that number will be central symbol

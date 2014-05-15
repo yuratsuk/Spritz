@@ -1,12 +1,12 @@
-package launcher;
+package ua.kpi.fpm.oop.launcher;
 
-import controller.Controller;
-import loader.Loader;
-import loader.UnsupportedFileFormatException;
-import model.WordGenerator;
+//import ua.kpi.fpm.oop.controller.Controller;
+import ua.kpi.fpm.oop.loader.Loader;
+import ua.kpi.fpm.oop.loader.UnsupportedFileFormatException;
+import ua.kpi.fpm.oop.model.WordGenerator;
 
 import java.io.*;
-import java.util.Scanner;
+//import java.util.Scanner;
 
 /**
  * Created by Yura on 19.04.2014.
@@ -18,7 +18,7 @@ public class Launcher {
         Loader loader = null;
         try
         {
-            loader = Loader.getLoader("test.txt");
+            loader = Loader.getLoader("war.txt");
         }
         catch (FileNotFoundException e)
         {
@@ -33,7 +33,7 @@ public class Launcher {
         WordGenerator generator = new WordGenerator(loader);
         generator.setCurrentSpeed(100);
 
-        Controller controller = new Controller(generator);
+        //Controller controller = new Controller(generator);
 
 
         /*

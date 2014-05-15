@@ -1,7 +1,7 @@
-package text;
+package ua.kpi.fpm.oop.text;
 
 /**
- * @author Lana
+ * @author Yura
  * This class contains paragraph as one string
  * id - paragraph number in text
  */

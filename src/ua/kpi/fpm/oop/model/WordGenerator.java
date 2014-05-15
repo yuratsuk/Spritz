@@ -1,15 +1,15 @@
-package model;
+package ua.kpi.fpm.oop.model;
 
 
-import controller.Controller;
-import loader.Loader;
-import text.Paragraph;
-import text.Word;
+import ua.kpi.fpm.oop.controller.Controller;
+import ua.kpi.fpm.oop.loader.Loader;
+import ua.kpi.fpm.oop.text.Paragraph;
+import ua.kpi.fpm.oop.text.Word;
 
 import java.util.*;
 
 /**
- * @author Lana
+ * @author Yura
  * This class divides paragraph into words and set attributes (id, number of central symbol and delay)
  */
 public class WordGenerator {
@@ -77,12 +77,13 @@ public class WordGenerator {
         }
     }
 
-    private void setCurrentWord(int currentWord)
+    public void setCurrentWord(int currentWord)
     {
         this.currentWord = currentWord;
     }
 
-    public int getCurrentWord(){
+    public int getCurrentWord()
+    {
         return currentWord;
     }
 

@@ -1,14 +1,16 @@
-package loader;
+package ua.kpi.fpm.oop.loader;
 
-import text.Paragraph;
+import ua.kpi.fpm.oop.text.Paragraph;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
+
 /**
- * @author Lana
- * */
+ * @author Yura
+ * This class is used for working with .txt files
+ */
 public class LoaderFromTxt extends Loader {
 
     private Scanner scanner;

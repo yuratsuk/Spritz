@@ -1,12 +1,12 @@
-package loader;
+package ua.kpi.fpm.oop.loader;
 
-import text.Paragraph;
+import ua.kpi.fpm.oop.text.Paragraph;
 
 import java.io.*;
 import java.util.*;
 
 /**
- * @author Lana
+ * @author Yura
  * This class is parent for all type of loaders
  * It contains fabric method to to determine the loader type
  * and abstract method nextParagraph

@@ -1,7 +1,7 @@
-package loader;
+package ua.kpi.fpm.oop.loader;
 
 /**
- * Created by Lana on 23.04.2014.
+ * Created by Yura on 23.04.2014.
  */
 public class UnsupportedFileFormatException extends Exception {
 
