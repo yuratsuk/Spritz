@@ -21,18 +21,20 @@ public class Controller {
     private MainActivity view;
     private UITimer timer;
     public Handler uiHandler = new Handler();
+    private Word currentWord;
 
     private Runnable runMethod = new Runnable() 
       {
           public void run()
           {
                 // do something
-        	  Word word = null;
+        	  //Word word = null;
         	  try
               {
-                 word = wordGenerator.nextWord();
-                 timer.setDelay(Double.valueOf(word.getDelay() * 1000).intValue());
-                 view.setWord(word);
+        		 view.setWord(currentWord);
+        		 currentWord = wordGenerator.nextWord();
+                 timer.setDelay(Double.valueOf(currentWord.getDelay() * 1000).intValue());
+                 
               }
               catch (NoSuchElementException ex) 
               {
@@ -40,6 +42,11 @@ public class Controller {
                   
                   timer.stop();
               }
+        	  catch (NullPointerException e)
+        	  {
+        		  currentWord = wordGenerator.nextWord();
+                  timer.setDelay(Double.valueOf(currentWord.getDelay() * 1000).intValue());
+        	  }
 
           }
       };

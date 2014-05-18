@@ -18,6 +18,8 @@ public class WordGenerator {
     private Loader loader;
     private List<String> words;
     private double currentSpeed;    //words per minute
+    private final double COMMA_DELAY_FACTOR = 1.5;
+    private final double POINT_DELAY_FACTOR = 2; 
 
     //private Controller controller;
 
@@ -44,7 +46,14 @@ public class WordGenerator {
         for (; !(text.isEmpty()) ;)
         {
             int firstSpace = text.indexOf(" ");
-            words.add(text.substring(0,firstSpace));
+            String word = text.substring(0,firstSpace);
+            for (; word.length() > 13 ;)
+            {
+            	words.add(word.substring(0, word.length() / 2) + "-");
+            	word = word.substring(word.length() /2);
+            }
+            words.add(word);
+            if (word.endsWith(".")) words.add(" ");
             text = text.substring(firstSpace + 1);
         }
     }
@@ -57,12 +66,19 @@ public class WordGenerator {
     {
         checkTheEndOfParagraph();
 
-        //if (words.get(currentWord).length() > 13)
-
-        int centralSymbol = (words.get(currentWord).length() + 6) / 4 - 1; // spritz formula
+        String word = words.get(currentWord);
+        int centralSymbol = (word.length() + 6) / 4 - 1; // spritz formula
         double delay = 60.0 / currentSpeed; // 60 seconds in minute
-
-        return new Word(currentWord, words.get(currentWord++), centralSymbol, delay);
+        
+        if (word.endsWith(",")) delay *= COMMA_DELAY_FACTOR;
+        if (word.endsWith(".")) delay *= POINT_DELAY_FACTOR;
+        if (word.endsWith("!")) delay *= POINT_DELAY_FACTOR;
+        if (word.endsWith("?")) delay *= POINT_DELAY_FACTOR;
+        if (word.endsWith(";")) delay *= POINT_DELAY_FACTOR;
+       
+        Word newWord = new Word(currentWord, words.get(currentWord), centralSymbol, delay);
+        currentWord++;
+        return newWord;
     }
 
     /**
