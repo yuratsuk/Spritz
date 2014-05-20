@@ -14,6 +14,7 @@ import java.util.*;
 abstract public class Loader {
 
     protected int currentParagraph;
+    protected File file;
 
     /**
      *
@@ -21,10 +22,20 @@ abstract public class Loader {
      * @return loader that corresponds to the file type
      * @throws FileNotFoundException
      */
+    abstract public void setCurrentparagraph(int paragraph) throws FileNotFoundException;
+    
+    public int getCurrentParagraph()
+    {
+    	return currentParagraph - 1;
+    }
+    
+    
     static public Loader getLoader(String fileName) throws FileNotFoundException, UnsupportedFileFormatException
     {
-        File file = new File(fileName);
-        if (fileName.endsWith(".txt"))
+        
+    	File file = new File(fileName);
+    	
+    	if (fileName.endsWith(".txt"))
         {
             return new LoaderFromTxt(file);
         }

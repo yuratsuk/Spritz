@@ -1,5 +1,6 @@
 package ua.kpi.fpm.oop.controller;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.NoSuchElementException;
 
@@ -102,5 +103,21 @@ public class Controller {
     {
     	wordGenerator.setCurrentWord(0);
     	view.setWord(wordGenerator.nextWord());
+    }
+    public void setCurrentWord(int word)
+    {
+    	wordGenerator.setCurrentWord(word);
+    }
+    public int getCurrentWord()
+    {
+    	return wordGenerator.getCurrentWord();
+    }
+    public void setCurrentParagraph(int paragraph) throws FileNotFoundException
+    {
+    	wordGenerator.setCurrentParagraph(paragraph);
+    }
+    public int getCurrentParagraph()
+    {
+    	return wordGenerator.getCurrentParagraph();
     }
 }

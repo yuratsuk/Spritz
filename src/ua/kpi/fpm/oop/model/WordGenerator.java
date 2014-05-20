@@ -6,6 +6,7 @@ import ua.kpi.fpm.oop.loader.Loader;
 import ua.kpi.fpm.oop.text.Paragraph;
 import ua.kpi.fpm.oop.text.Word;
 
+import java.io.FileNotFoundException;
 import java.util.*;
 
 /**
@@ -110,7 +111,17 @@ public class WordGenerator {
     public double getCurrentSpeed() {
         return currentSpeed;
     }
+    
+    public void setCurrentParagraph(int paragraph) throws FileNotFoundException
+    {
+    	loader.setCurrentparagraph(paragraph);
+    	loadNextParagraph();
+    }
 
+    public int getCurrentParagraph()
+    {
+    	return loader.getCurrentParagraph();
+    }
     /*public void setController(Controller controller) {
         this.controller = controller;
     }*/

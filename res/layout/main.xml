@@ -60,12 +60,12 @@
         android:onClick="backToBeginOfParagraph" />
 
     <Button
-        android:id="@+id/openFile"
+        android:id="@+id/save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/oneWordBackButton"
         android:layout_centerHorizontal="true"
-        android:text="Open file" 
-        android:onClick="OnOpenFileClick"/>
+        android:text="Save" 
+        android:onClick="OnSaveClick"/>
     
 </RelativeLayout>

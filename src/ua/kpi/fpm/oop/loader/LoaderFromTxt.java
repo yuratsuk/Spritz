@@ -21,7 +21,9 @@ public class LoaderFromTxt extends Loader {
      */
     LoaderFromTxt(File file) throws FileNotFoundException
     {
-        scanner = new Scanner(file);
+        
+    	this.file = file;
+    	scanner = new Scanner(file);
         currentParagraph = 0;
 
 
@@ -35,6 +37,19 @@ public class LoaderFromTxt extends Loader {
         s = s.replaceAll("\\s+", " ");
         return new Paragraph(currentParagraph++, s);
     }
+
+	@Override
+	public void setCurrentparagraph(int paragraph) throws FileNotFoundException 
+	{
+		currentParagraph = paragraph;
+		scanner = new Scanner(file);
+		String s;
+		for (int i=0; i < currentParagraph; i++)
+		{
+			s = scanner.nextLine();
+		}
+		
+	}
 
 
 }
